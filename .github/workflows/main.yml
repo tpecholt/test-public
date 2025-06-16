@@ -38,10 +38,10 @@ jobs:
           
       - name: "Trigger test-private"
         run: |
-          event_type = "trigger-workflow"
-          art_id = ${{ steps.artifact-upload-step.outputs.artifact-id }} 
-          art_url = ${{ steps.artifact-upload-step.outputs.artifact-url }}
-          echo "triggering test-private with url=$url"
+          event_type="trigger-workflow"
+          art_id=${{ steps.artifact-upload-step.outputs.artifact-id }} 
+          art_url=${{ steps.artifact-upload-step.outputs.artifact-url }}
+          echo "triggering test-private with id=$art_id, url=$art_url"
           curl -L \
             -X POST \
             -H "Accept: application/vnd.github+json" \
